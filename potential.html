@@ -1,0 +1,363 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title> 複素解析幾何学のポテンシャル論的諸相 </title>
+<meta charset="UTF-8">
+<meta name="robots" content="noimageindex">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(document).ready(function() {
+	    $('.area:first').show();
+	    $('.tab li:first').addClass('active');
+	 
+	    $('.tab li').click(function() {
+	        $('.tab li').removeClass('active');
+	        $(this).addClass('active');
+	        $('.area').hide();
+	 
+	        $($(this).find('a').attr('href')).fadeIn();
+	        return false;
+	    });
+	});
+})
+</script>
+
+<style type="text/css">
+body{
+	font-family:'Meiryo';
+}
+h2 {
+	border-top: 3px solid #27ae60;
+	-moz-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
+	-webkit-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
+	box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
+	padding:7px;
+}
+
+p.resizeimage img { width: 40%; }
+.tab, .tab li, .tab li a {/*クリックするタブ部分*/
+    float: left;
+    padding:5px;
+    margin-right:20px;
+}
+
+.content {/*切り替わる部分を囲うボックス*/
+    clear: both;
+    overflow: hidden;
+/*    width: 300px;*/
+/*    border:1px solid #eee;*/
+/*    height:300px;*/
+}
+
+.area {/*切り替わる部分はまず全部消しておく*/
+    display: none;
+}
+.tab li.active {/*選択中のタブ。色を変える等*/
+    background: #eee;
+}
+
+.tab li.active a{/*選択中のタブのリンクカラー*/
+    color:red;
+}
+h1{
+    margin: 0 0 1.5em;
+    padding: 0.8em;
+    font-size: 1.7em;
+    font-weight: bold;
+    border: 2px solid #27ae60;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.4);
+    -moz-box-shadow: 3px 3px 3px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 3px 3px 3px rgba(0,0,0,0.4);
+    -o-box-shadow: 3px 3px 3px rgba(0,0,0,0.4);
+    -ms-box-shadow: 3px 3px 3px rgba(0,0,0,0.4);
+} 
+div.g{
+    width: 80%;
+    margin: 2em auto; 
+}
+.sm{
+   font-size: 80%;
+}
+.big{
+   font-size: 170%;
+}
+.title{
+   border-left: 10px solid #27ae60;
+   padding: 0 0.5em;
+}
+.place{
+   font-size: 110%;
+   margin: 0.5em 0;
+}
+.s{
+	border-left: 4px solid #27ae60;
+	padding: 0 0.2em;
+	font-size: 1.1em;
+	font-weight: bold;
+	margin: 0 0 0.1em;
+}
+
+table.type08 {
+	border-collapse: collapse;
+	text-align: left;
+	line-height: 1.5;
+	border-left: 1px solid #ccc;
+}
+
+table.type08 thead th {
+	padding: 10px;
+	font-weight: bold;
+	border-top: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-bottom: 2px solid #27ae60;
+	background: #dcdcd1;
+}
+table.type08 tbody th {
+	width: 150px;
+	padding: 10px;
+	font-weight: bold;
+	vertical-align: top;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	background: #ececec;
+}
+table.type08 td {
+	width: 350px;
+	padding: 10px;
+	vertical-align: top;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+</style>
+
+
+</head>
+<body>
+
+<div class="g">
+<div class="title">
+<b class="big"> 複素解析幾何学のポテンシャル論的諸相 
+<div class="sm">Potential Theoretical Aspects of Complex Analytic Geometry</div>
+</b>
+</div>
+<div class="place">
+2016/2/12-14 東京大学大学院数理科学研究科
+</div>
+
+<h2>概要</h2>
+<div>
+<table>
+  <tr>
+    <td><b> 日時: </b></td>
+    <td>2016/2/12-14 (<a href="https://sites.google.com/site/l2extension/">Workshop on L^2 Extension Theorems</a>の前です。)</td>
+  </tr>
+  <tr>
+    <td><b>場所:</b></td>
+    <td><a href="http://www.ms.u-tokyo.ac.jp/index.html">東京大学大学院数理科学研究科</a> (駒場キャンパス) <b>002教室</b></td>
+  </tr>
+</table>
+</div>
+
+<h2>講演者</h2>
+<div>
+<b>足立真訓</b>(東京理科大学)<br>
+<b>久本智之</b>(名古屋大学)<br>
+<b>菊田伸</b>(工学院大学)<br>
+<b>小池貴之</b>(東京大学)<br>
+<b>丸亀泰二</b>(東京大学)<br>
+<b>松本佳彦</b>(東京工業大学)<br>
+<b>松村慎一</b>(東北大学)<br>
+<b>野村亮介</b>(東京大学)<br>
+<b>野瀬敏洋</b>(九州産業大学)<br>
+<b>竹内有哉</b>(東京大学)<br>
+<b>千葉優作</b>(東京大学)<br>
+<b>山盛厚伺</b>(名古屋大学)<br>
+</div>
+<br>
+
+<div class="s">
+論文紹介の講演者
+</div>
+<div>
+<b>千々和大輝</b>(東京工業大学)<br>
+<b>細野元気</b>(東京大学)<br>
+<b>北岡旦</b>(東京工業大学)<br>
+<b>野村亮介</b>(東京大学)<br>
+</div>
+
+<h2>スケジュール</h2>
+<div>
+<table class="type08">
+	<thead>
+	<tr>
+		<th scope="cols"></th>
+		<th scope="cols">2/12</th>
+		<th scope="cols">2/13</th>
+		<th scope="cols">2/14</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<th scope="row">9:00--10:00</th>
+		<td>論文紹介その1(千々和, 北岡)</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<th scope="row">10:00--12:00</th>
+		<td>論文紹介その2</td>
+		<td>論文紹介その3(細野)</td>
+		<td>論文紹介その4(野村)</td>
+	</tr>
+	<tr>
+		<th scope="row">12:00--13:30</th>
+		<td>昼休み</td>
+		<td>昼休み</td>
+		<td>昼休み</td>
+	</tr>
+	<tr>
+		<th scope="row">13:30--14:30</th>
+		<td>千葉優作(東京大学)</td>
+		<td>山盛厚伺(名古屋大学)</td>
+		<td>野瀬敏洋(九州産業大学)</td>
+	</tr>
+	<tr>
+		<th scope="row">14:45--15:45</th>
+		<td>久本智之(名古屋大学)</td>
+		<td>足立真訓(東京理科大学)</td>
+		<td>松本佳彦(東京工業大学)</td>
+	</tr>
+	<tr>
+		<th scope="row">16:00--17:00</th>
+		<td>菊田伸(工学院大学)</td>
+		<td>松村慎一(東北大学)</td>
+		<td>丸亀泰二(東京大学)</td>
+	</tr>
+	<tr>
+		<th scope="row">17:15--18:15</th>
+		<td>野村亮介(東京大学)</td>
+		<td>小池貴之(東京大学)</td>
+		<td>竹内有哉(東京大学)</td>
+	</tr>
+	</tbody>
+</table>
+</div>
+
+<h2>タイトル/アブストラクト</h2>
+<div>
+<div class="s">足立真訓 : Diederich-Fornaess 指数と消滅定理</div>
+<div>Diederich-Fornaess 指数は、弱擬凸領域の超凸性を測る指数である。
+幾何学的には、弱擬凸領域をその内側から強擬凸領域によりどの程度近似できるか、
+その程度を測る指数とも解釈できる。
+本講演では、まず Diederich-Fornaess 指数と弱擬凸境界の幾何学の関係について概説し、
+その後、Levi 平坦境界の2次元領域において、Diederich-Fornaess 指数の極大性から
+Hardy 空間の消滅、とくに Liouville 性が従うことを示す。</div><br>
+
+
+<div class="s">久本智之 : 偏曲代数多様体の安定性とMonge-Ampère方程式</div>
+<div>定スカラー曲率Kähler計量の存在問題をKähler計量空間の幾
+何学の観点から解説します。特にBerman- Boucksom-Jonssonによる最近の結果
+(arXiv:1509.04561)まで紹介できればと思います。</div><br>
+
+
+<div class="s">菊田伸 : 一般型境界を持つ準射影代数多様体上におけるリッチ曲率が負のケーラー・アインシュタイン計量に対する境界挙動</div>
+<div>非特異準射影代数多様体上において, 負のリッチ曲率を持った(概)完備ケーラー・アインシュタイン計量の境界因子近くでの振る舞いを考察する. 特に, この講演では, 対数的標準束に対する正値性の退化の観点からその振る舞いに関する一つの予想を提示し, 境界が一般型である場合に成り立つことを報告する. </div><br>
+
+<div class="s">小池貴之 : On some analogues of Ueda theory and their applications</div>
+<div>Let $C$ be a compact complex curve included in a non-singular complex
+surface such that the normal bundle is topologically trivial. Ueda
+studied complex analytic properties of a neighborhood of $C$ when $C$ is
+non-singular or is a rational curve with a node. We propose analogues of
+Ueda's theory in two manners: Ueda's theory for the case where $C$
+admits nodes and a codimension two analogue of Ueda's theory. As an
+application, we study singular Hermitian metrics with semi-positive
+curvature on the anti-canonical bundle of the blow-up of the projective
+plane at 9 points, and the blow-up of the three dimensional projective
+space at 8 points.</div><br>
+
+
+
+<div class="s">丸亀泰二 : Volume renormalization for the Blaschke metric on strictly convex
+domains</div>
+<div>Blaschke計量は, 実Monge--Ampere方程式の解を用いて定義される, 局所平坦な
+射影多様体の強凸領域上の射影不変計量である. この計量は強擬凸領域上の完備
+Kahler-Einstein計量(Cheng-Yau計量)の実類似であるとともに, 共形幾何におけ
+るPoincare-Einstein計量の変種と考えることもできる. Cheng-Yau計量の無限遠
+境界はCR多様体であり, Poincare-Einstein計量の無限遠境界は共形多様体であ
+るのに対し, Blaschke計量の無限遠境界は共形Codazzi構造と呼ばれる幾何構造
+をもつ. この講演では, Blaschke計量に関する部分領域の体積の漸近展開を考察
+し, それを利用して境界の大域的共形(Codazzi)不変量を構成する.</div><br>
+
+
+<div class="s">松本佳彦 : 漸近的複素双曲計量の幾何解析とDonnelly-Feffermanの定理</div>
+<div>複素Euclid空間の有界強擬凸領域において、Bergman計量に関する非自明なL2調和微分形式はmiddle degreeのものを除き存在しないことが知られている（Donnelly-Feffermanの定理）。本講演では、漸近的複素双曲計量に対する幾何的楕円型線型微分作用素の理論から、上記のL2調和微分形式について「無限遠方におけるアプリオリな減衰」が従うことを紹介する。またその応用として、Donnelly-Feffermanの定理の別証明を与える。</div><br>
+
+
+<div class="s">松村慎一 : A vanishing theorem of Koll¥'ar-Ohsawa type</div>
+<div>In this talk, I would like to give a decomposition theorem for the cohomology groups of the canonical bundle twisted by Nakano semi-positive vector bundles, by using the higher direct image sheaves of proper holomorphic maps.
+As an application, we prove a vanishing theorem of Koll'ar-Ohsawa type by combining the L^2-method for the dbar-equation.</div><br>
+
+<div class="s">野村亮介 : Blowup behavior of the scalar curvature along the conical Kähler-Ricci flow with finite time singularities</div>
+<div>Kähler-Ricci flowの最大存在時間Tが有限である場合，そのスカラー曲率が上からC/(T-t)^2おさえられることがZ. Zhangにより知られている．本講演では，この定理のcone metric versionを示す．</div><br>
+
+<div class="s">野瀬敏洋 : On the meromorphy of local zeta functions</div>
+<div><a href="nose.pdf">アブストラクト(pdf)</a></div><br>
+
+<div class="s">竹内有哉 : 強擬凸領域上の散乱理論</div>
+<div>複素Euclid空間の有界な強擬凸領域上には負曲率の完備なKähler-Einstein計量が存在する．この計量に関するLaplacianは境界で退化する楕円型微分作用素であり，そのような作用素を調べる理論を（幾何学的）散乱理論と呼ぶ．これは偏微分方程式の理論であるが，この理論を用いて境界の不変量を取り出すことができるという興味深い現象が存在する．本講演では，強擬凸領域における散乱理論について紹介し，その後に境界の不変量とどのように結びつくかについて説明する．</div><br>
+
+<div class="s">千葉優作 : Entire mappings and Monge-Amp¥`ere currents with bounded potentials</div>
+<div>k次元複素平面からk次元コンパクトケーラー多様体への正則写像と, コンパクトケーラー多様体上の有界なポテンシャルを持つモンジュ・アンペールカレントとの交叉を調べる.  結果の応用として, k次元複素平面からの正則写像における像の補集合が pluripolar set となる十分条件を与える.</div><br>
+
+<div class="s">山盛厚伺 : How to use Bergman kernel functions to get analogues of Cartan's
+linearity theorem</div>
+<div>Cartanの線形性定理「有界円型領域の原点を固定する正則自己同型写像は線形である」は正則自己同型群の理論における重要な結果の一つである.
+この定理は有界性・円形性のいずれも, これらを外すと反例が存在する. 本講演では, Bergmanの代表領域の理論を援用し,
+Cartanの定理と同様の結論が得られる(有界・円形とは限らない)領域のクラスを与える.</div><br>
+
+</div>
+
+
+<div class="s">論文紹介</div>
+<b>千々和大輝, 北岡旦 (その1、その2)</b><br>
+[1]の紹介と、その応用に関する論文(下の[2]を中心に予定)の紹介を行う。<br>
+「C＾ｎの多項式凸」に相当する「Projective hull」をJ.Wermerが提唱した。本講演では、Projective hullの定義と性質を見て、Poletsky理論の応用である正則凸包の特徴づけをみる。そして、Projective hullにも正則凸包の特徴づけの類似を紹介する。<br>
+[1] J.-P. Rosay, Poletsky theory of disks on holomorphic manifolds, Indiana
+Univ. Math. J. 52 (2003), 157-169.<br>
+[2] B. D. Drnovšek, F. Forstnerič, "Characterizations of projective
+hulls by analytic discs", Illinois J. Math., 56, 1 (2012), 53--65.<br>
+[3] F. R. Harvey, H. B. Lawson. JR, "Projective hulls the projective
+Gelfand transform", 2005.
+<a href="http://arxiv.org/abs/math/0510286">http://arxiv.org/abs/math/0510286</a>
+<br>
+
+<b>細野元気 (その3)</b><br>
+[4] R.J. Berman, S. Boucksom, V. Guedj, A. Zeriahi, A variational approach 
+to complex Monge-Ampère equations. Publ. Math. Inst. Hautes Études Sci. 
+117 (2013), 179–245.<br>
+[5] S. Boucksom,  P. Eyssidieux,  V. Guedj,  A. Zeriahi: Monge-Amp`ere equations in
+arbitrary cohomology classes.  Acta
+Math. 205 (2) (2010) 199–262.<br>
+
+<b>野村亮介 (その4)</b><br>
+[6] Di Nezza E, Lu CH, 2014, Complex Monge–Ampère equations on quasi-projective varieties, Journal für Die Reine Und Angewandte Mathematik (crelles Journal), Vol:0, <br>
+
+
+<h2>その他</h2>
+オーガナイザー:
+<ul>
+    <li><a href="http://www.ms.u-tokyo.ac.jp/~genkih/" target="_blank">細野 元気</a>, genkih [at] ms.u-tokyo.ac.jp (東大数理)</li>
+    <li><a href="http://ktakayuki.github.io/" target="_blank">小池 貴之</a>, tkoike [at] ms.u-tokyo.ac.jp (東大数理)</li>
+    <li>野村 亮介, nomu [at] ms.u-tokyo.ac.jp (東大数理)</li>
+</ul>
+
+このワークショップは, 数物フロンティア・リーディング大学院(FMSP)と、科研費(基盤A  課題番号 15H02057)の援助を受けています. <br>
+<img src="http://gf2013.ms.u-tokyo.ac.jp/img/fmsp_logo001_low.jpg" height="68" width="80">
+
+</div>
+
+
+
+</body>
+</html>
