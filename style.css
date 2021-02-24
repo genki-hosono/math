@@ -1,0 +1,60 @@
+a:link {
+    color: #175030;
+}
+a:visited {
+    color: #703010;
+}
+a:hover {
+    color: #57A050;
+}
+
+hr {
+	margin: 4em 0 3em 0;
+	height: 10px;
+	background-color: #279040;
+	border: none;
+}
+
+
+div.g{
+	width: 80%;
+	margin: 2em auto;
+}
+
+
+.title{
+	border-left: 10px solid #279040;
+	padding: 0 0.2em;
+        border-bottom: 5px double #279040;
+}
+
+.m{
+    margin: 0 0 1em;
+    padding: 0.2em;
+    border-left: 5px solid #279040;
+    border-bottom: 3px double #279040;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+
+.s{
+	border-left: 4px solid #279040;
+	padding: 0 0.2em;
+	font-size: 1.1em;
+	margin: 0 0 0.1em;
+        border-bottom: 1px solid #279040;
+}
+
+
+ul{
+	list-style:decimal;
+	margin: 0 0 1em 1.3em;
+	padding: 0;
+}
+
+ul.d{
+	list-style:square;
+	margin: 0 0 1em 1.3em;
+	padding: 0;
+}
